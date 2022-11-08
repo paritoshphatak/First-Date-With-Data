@@ -4,25 +4,34 @@ using namespace std;
 
 int main()
 {
-    int n;
-    int i;
-    int t;
-    int num;
-    cin >> n;
-    int a[n];
-    cout << "Number of elements in array\n";
-    cin >> n;
-    for (i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    cout << "Enter number to be deleted " << endl;
-    cin >> num;
-    for (i = 0; i < n; i++)
-    {
-        if (a[i] == num){
-            t = i;
-        }
-    }
     
+    int i;
+    int index;
+    int arr[50];
+    int size;
+    cout << endl << "Enter Size Of The Array : ";
+    cin >> size;
+    if (size >= 50)
+    {
+        cout << endl << "Enter Size Less Than 50 : ";
+        cin >> size;
+    }
+    cout << endl << "Enter " << size << " Elements : " << endl;
+    for (i = 0; i < size; i++)
+    {
+        cout << "Enter " << i + 1 << " Element At " << i << " Index : ";
+        cin >> arr[i];
+    }
+    cout << endl << "Enter The Index From Where You Want To Delete The Element : ";
+    cin >> index;
+    for (i = index; i < size; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    size--;
+    cout << endl << "The Array After Deletion Of An Element Is : " << endl;
+    for (i = 0; i < size; i++)
+    {
+        cout << arr[i] << endl;
+    }
 }
